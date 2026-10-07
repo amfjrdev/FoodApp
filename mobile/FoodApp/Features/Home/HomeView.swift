@@ -122,11 +122,29 @@ public struct HomeView: View {
                             ProgressView()
                                 .frame(maxWidth: .infinity, minHeight: 200)
                         } else if viewModel.foods.isEmpty {
-                            EmptyStateView(
-                                icon: "fork.knife",
-                                title: "No Dishes Available",
-                                message: "Try selecting a different category or check back soon."
-                            )
+                            VStack(spacing: 12) {
+                                EmptyStateView(
+                                    icon: "fork.knife",
+                                    title: "No Dishes Loaded",
+                                    message: viewModel.errorMessage ?? "Tap below to fetch the latest gourmet dishes from the server."
+                                )
+                                Button(action: {
+                                    Task {
+                                        await viewModel.loadData()
+                                    }
+                                }) {
+                                    HStack(spacing: 6) {
+                                        Image(systemName: "arrow.clockwise")
+                                        Text("Reload Dishes")
+                                    }
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 18)
+                                    .padding(.vertical, 10)
+                                    .background(AppTheme.primary)
+                                    .clipShape(Capsule())
+                                }
+                            }
                             .frame(minHeight: 250)
                         } else {
                             LazyVGrid(columns: columns, spacing: 14) {
@@ -154,8 +172,13 @@ public struct HomeView: View {
             }
         }
         .task {
+            await viewModel.loadData()
+        }
+        .onAppear {
             if viewModel.foods.isEmpty {
-                await viewModel.loadData()
+                Task {
+                    await viewModel.loadData()
+                }
             }
         }
     }

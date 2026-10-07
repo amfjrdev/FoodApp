@@ -5,6 +5,7 @@ public struct OrderHistoryListView: View {
     @State private var manualOrderNumber: String = ""
     @State private var selectedOrderNumber: String? = nil
     @State private var showingTracking = false
+    @State private var showingOnboardingSheet = false
 
     public var body: some View {
         NavigationStack {
@@ -118,6 +119,25 @@ public struct OrderHistoryListView: View {
                 }
             }
             .navigationTitle("My Orders")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        showingOnboardingSheet = true
+                    }) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "sparkles")
+                            Text("Intro Tour")
+                        }
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundColor(AppTheme.primary)
+                    }
+                }
+            }
+            .sheet(isPresented: $showingOnboardingSheet) {
+                OnboardingView {
+                    showingOnboardingSheet = false
+                }
+            }
             .navigationDestination(isPresented: $showingTracking) {
                 if let num = selectedOrderNumber {
                     OrderTrackingView(orderNumber: num)
