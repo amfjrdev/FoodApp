@@ -3,6 +3,7 @@ import SwiftUI
 public struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @EnvironmentObject private var cartStore: CartStore
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding: Bool = true
     @State private var selectedFood: Food? = nil
     @State private var showingDetail = false
 
@@ -19,7 +20,7 @@ public struct HomeView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 20) {
                         // Top Location & Greeting Bar
-                        HStack {
+                        HStack(alignment: .center) {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("DELIVERING TO")
                                     .font(.system(size: 10, weight: .heavy))
@@ -38,27 +39,55 @@ public struct HomeView: View {
 
                             Spacer()
 
-                            // Cart Quick Indicator
-                            NavigationLink(destination: CartView()) {
-                                ZStack(alignment: .topTrailing) {
-                                    Circle()
-                                        .fill(Color.white)
-                                        .frame(width: 44, height: 44)
-                                        .shadow(color: Color.black.opacity(0.06), radius: 8, x: 0, y: 2)
+                            HStack(spacing: 10) {
+                                // Return to Starting/Welcome Page Button
+                                Button(action: {
+                                    #if os(iOS)
+                                    let generator = UIImpactFeedbackGenerator(style: .medium)
+                                    generator.impactOccurred()
+                                    #endif
+                                    withAnimation(.easeInOut(duration: 0.45)) {
+                                        hasCompletedOnboarding = false
+                                    }
+                                }) {
+                                    HStack(spacing: 5) {
+                                        Image(systemName: "sparkles")
+                                            .font(.system(size: 12, weight: .bold))
+                                        Text("Intro")
+                                            .font(.system(size: 12, weight: .bold))
+                                    }
+                                    .foregroundColor(AppTheme.primary)
+                                    .padding(.horizontal, 11)
+                                    .padding(.vertical, 8)
+                                    .background(AppTheme.primaryLight)
+                                    .clipShape(Capsule())
+                                    .overlay(
+                                        Capsule().stroke(AppTheme.primary.opacity(0.3), lineWidth: 1)
+                                    )
+                                }
 
-                                    Image(systemName: "bag.fill")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(AppTheme.textPrimary)
-                                        .frame(width: 44, height: 44)
+                                // Cart Quick Indicator
+                                NavigationLink(destination: CartView()) {
+                                    ZStack(alignment: .topTrailing) {
+                                        Circle()
+                                            .fill(Color.white)
+                                            .frame(width: 44, height: 44)
+                                            .shadow(color: Color.black.opacity(0.06), radius: 8, x: 0, y: 2)
 
-                                    if cartStore.itemCount > 0 {
-                                        Text("\(cartStore.itemCount)")
-                                            .font(.system(size: 10, weight: .heavy))
-                                            .foregroundColor(.white)
-                                            .frame(width: 18, height: 18)
-                                            .background(AppTheme.primary)
-                                            .clipShape(Circle())
-                                            .offset(x: 2, y: -2)
+                                        Image(systemName: "bag.fill")
+                                            .font(.system(size: 18))
+                                            .foregroundColor(AppTheme.textPrimary)
+                                            .frame(width: 44, height: 44)
+
+                                        if cartStore.itemCount > 0 {
+                                            Text("\(cartStore.itemCount)")
+                                                .font(.system(size: 10, weight: .heavy))
+                                                .foregroundColor(.white)
+                                                .frame(width: 18, height: 18)
+                                                .background(AppTheme.primary)
+                                                .clipShape(Circle())
+                                                .offset(x: 2, y: -2)
+                                        }
                                     }
                                 }
                             }
