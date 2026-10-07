@@ -40,6 +40,7 @@
 		E8824564DEA9EA466692C82C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1ACFF10B1775AB4417C9A /* APIClient.swift */; };
 		E8F6CB13FE299D99A4AB8689 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64AA03371B734C5C4D826E /* SearchView.swift */; };
 		F92BCF874EC3BD4DFC78D539 /* QuantityStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D65B864760D25C0B23C13A6 /* QuantityStepper.swift */; };
+		F991E56C03E722182A66B671 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759428D9E351FB7634361B62 /* OnboardingView.swift */; };
 		FA8E230B0702A4C631933578 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA24C29D0C314071B91FF22 /* LaunchScreen.storyboard */; };
 		FD0C7713817E8BFC33E4F6D8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A75E8AF025A2C6F69A5608 /* PrimaryButton.swift */; };
 		FF85A413A1AB1499DCDC2598 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B50DF640F1974FAA2EEC5AA /* HomeViewModel.swift */; };
@@ -70,6 +71,7 @@
 		5FA32461F188C47D4695C014 /* OrderConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationView.swift; sourceTree = "<group>"; };
 		66ECFE47B69A054F194869E2 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		6E99C5DD74D1C180ADDAF7CA /* CartItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemRow.swift; sourceTree = "<group>"; };
+		759428D9E351FB7634361B62 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		86B325BF6C48C54668D37B27 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		8BB55D73BB90B85F9D1F5FBA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D3CA84B18BBED654EBA51C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,14 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
+		ADD5F8518E23E75A8EA64BBF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				759428D9E351FB7634361B62 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		BDF679438081664C2CB879F9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 				63832C8E153E79E8510BE132 /* Checkout */,
 				1C838186486CE30B78B0BE15 /* FoodDetail */,
 				50B897EA697F255FC16CD22C /* Home */,
+				ADD5F8518E23E75A8EA64BBF /* Onboarding */,
 				8AD1B98928A0AB0B7DAB67AB /* OrderConfirmation */,
 				677E1AED3C37806D5BA2EFFE /* OrderTracking */,
 				9C28231C2C23E659588CE553 /* Search */,
@@ -388,6 +399,7 @@
 				373450EDD73B3BE1D47DF947 /* Formatters.swift in Sources */,
 				328C824D99FDE08A1E87B236 /* HomeView.swift in Sources */,
 				FF85A413A1AB1499DCDC2598 /* HomeViewModel.swift in Sources */,
+				F991E56C03E722182A66B671 /* OnboardingView.swift in Sources */,
 				8A917D906A39F8878FEF221E /* Order.swift in Sources */,
 				3EC70A460ED44680072907CB /* OrderConfirmationView.swift in Sources */,
 				A66B46551B0C15DD89E17E62 /* OrderHistoryListView.swift in Sources */,

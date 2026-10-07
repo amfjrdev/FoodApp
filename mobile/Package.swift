@@ -17,7 +17,7 @@ let package = Package(
         .target(
             name: "FoodAppCore",
             path: "FoodApp",
-            exclude: ["App/FoodApp.swift", "Resources/Info.plist"]
+            exclude: ["App/FoodApp.swift", "Resources/Info.plist", "Resources/LaunchScreen.storyboard"]
         ),
         .testTarget(
             name: "FoodAppTests",
