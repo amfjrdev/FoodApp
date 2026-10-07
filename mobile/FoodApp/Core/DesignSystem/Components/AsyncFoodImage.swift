@@ -35,7 +35,9 @@ public struct AsyncFoodImage: View {
                 fallbackPlaceholder
             }
         }
+        .frame(maxWidth: .infinity)
         .frame(height: height)
+        .clipped()
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
     }
 

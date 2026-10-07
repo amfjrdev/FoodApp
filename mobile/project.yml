@@ -12,11 +12,14 @@ targets:
       - path: FoodApp
     info:
       path: FoodApp/Resources/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.amfjrdev.FoodApp
         INFOPLIST_FILE: FoodApp/Resources/Info.plist
         SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1,2"
         CODE_SIGNING_ALLOWED: NO
         CODE_SIGNING_REQUIRED: NO
         CODE_SIGN_IDENTITY: ""

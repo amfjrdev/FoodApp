@@ -40,6 +40,7 @@
 		E8824564DEA9EA466692C82C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1ACFF10B1775AB4417C9A /* APIClient.swift */; };
 		E8F6CB13FE299D99A4AB8689 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64AA03371B734C5C4D826E /* SearchView.swift */; };
 		F92BCF874EC3BD4DFC78D539 /* QuantityStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D65B864760D25C0B23C13A6 /* QuantityStepper.swift */; };
+		FA8E230B0702A4C631933578 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA24C29D0C314071B91FF22 /* LaunchScreen.storyboard */; };
 		FD0C7713817E8BFC33E4F6D8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A75E8AF025A2C6F69A5608 /* PrimaryButton.swift */; };
 		FF85A413A1AB1499DCDC2598 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B50DF640F1974FAA2EEC5AA /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		2A517593B87AA32113D86833 /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
 		316423499560F3F571D30540 /* OrderTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackingView.swift; sourceTree = "<group>"; };
 		3B50DF640F1974FAA2EEC5AA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3DA24C29D0C314071B91FF22 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ED21BFD9527974E995C5BA8 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		507620D34091F836BCDF6CDC /* OrderHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryStore.swift; sourceTree = "<group>"; };
 		5125660734251BB80E081C04 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4B9D671C7873BA9FD18087 /* Info.plist */,
+				3DA24C29D0C314071B91FF22 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildConfigurationList = 5B6C40F04E2202C7B5F2F693 /* Build configuration list for PBXNativeTarget "FoodApp" */;
 			buildPhases = (
 				858698B3B185D43240F94FBE /* Sources */,
+				A1D6C7E2AD8FB9E882DFD9F0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -345,6 +349,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1D6C7E2AD8FB9E882DFD9F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8E230B0702A4C631933578 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		858698B3B185D43240F94FBE /* Sources */ = {
