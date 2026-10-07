@@ -1,0 +1,23 @@
+name: FoodApp
+options:
+  bundleIdPrefix: com.amfjrdev
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  FoodApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: FoodApp
+    info:
+      path: FoodApp/Resources/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.amfjrdev.FoodApp
+        INFOPLIST_FILE: FoodApp/Resources/Info.plist
+        SWIFT_VERSION: "5.9"
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGN_IDENTITY: ""
+        GENERATE_INFOPLIST_FILE: NO
