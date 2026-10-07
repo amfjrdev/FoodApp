@@ -1,11 +1,17 @@
 import app from './app.js';
 import { env } from './config/env.js';
 import { connectDatabase, disconnectDatabase } from './config/database.js';
+import { seedDatabase } from './seed.js';
 
 const startServer = async () => {
   try {
     // 1. Connect to Database (MongoDB with automatic embedded memory fallback)
     await connectDatabase();
+
+    // 2. Auto-seed default admin & catalog if empty
+    if (env.NODE_ENV !== 'production') {
+      await seedDatabase();
+    }
 
     // 2. Start HTTP Server
     const server = app.listen(env.PORT, () => {
